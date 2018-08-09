@@ -125,4 +125,8 @@ void TaskDisplay(void *pvParameters)  // This is a task.
     lcd.print(openCount);
     vTaskDelay(50000 / portTICK_PERIOD_MS);
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 574d891efa9f688d8565f180aaacdfdff04ed68a
