@@ -8,9 +8,9 @@ import time
 import serial
 import smtplib
 
-TO = 'wish1065@gmail.com'
-USER = 'rishabh.rajagopalan@gmail.com'
-PW = 'MANcity21'
+TO = ''
+USER = ''
+PW = ''
 
 SUB = 'Arduino Alert'
 BODY = 'Your <insert item here> has been opened'
