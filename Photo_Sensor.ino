@@ -88,7 +88,7 @@ void TaskBase(void *pvParameters)  // This is a task.
   for (;;) // A Task shall never return or exit.
   {
     baseVal = analogRead(A0);
-    Serial.println(baseVal);
+    //Serial.println(baseVal);
     vTaskDelay( 1000 / portTICK_PERIOD_MS ); // wait for one second
   }
 }
@@ -104,10 +104,14 @@ void TaskMeasure(void *pvParameters)  // This is a task.
 
     if(measureVal > baseVal * 1.5){
       openCount++;
-      vTaskDelay(60);
+      Serial.println("ALERT");
+    }
+
+    else{
+      Serial.println("NOACTIVITY");
     }
     
-    vTaskDelay(1);  // one tick delay (15ms) in between reads for stability
+    vTaskDelay(500 / portTICK_PERIOD_MS);  // one tick delay (15ms) in between reads for stability
   }
 }
 
@@ -119,6 +123,6 @@ void TaskDisplay(void *pvParameters)  // This is a task.
   {
     lcd.clear();
     lcd.print(openCount);
-    vTaskDelay(10000 / portTICK_PERIOD_MS);
+    vTaskDelay(50000 / portTICK_PERIOD_MS);
   }
 }
